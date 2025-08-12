@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dualshock32146-maker.github.io/eb-academy/sitemap.xml
