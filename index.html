@@ -312,7 +312,7 @@
                     <p class="max-w-2xl mx-auto text-sky-200">ご相談、ご質問、講演依頼など、お気軽にご連絡ください。<br>チームの未来を、一緒に作りましょう。</p>
                 </div>
                 <div class="max-w-xl mx-auto bg-white text-slate-800 rounded-lg p-8 shadow-2xl">
-                    <form action="mailto:meisay89.124.may@gmail.com" method="get" enctype="text/plain">
+                    <form id="contact-form" action="#" method="get">
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-bold mb-2">お名前</label>
                             <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
@@ -358,24 +358,56 @@
     </footer>
 
     <script>
-        // モバイルメニューのトグル
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  // モバイルメニューのトグル
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // メニュークリックでメニューを閉じる
+    const menuLinks = document.querySelectorAll('#mobile-menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
 
-        // メニュークリックでメニューを閉じる
-        const menuLinks = document.querySelectorAll('#mobile-menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+  // ▼ お問い合わせフォーム：mailtoをJSで起動
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const to = 'meisay89.124.may@gmail.com'; // 送信先アドレス
+      const name = document.getElementById('name')?.value?.trim() || '';
+      const team = document.getElementById('team')?.value?.trim() || '';
+      const email = document.getElementById('email')?.value?.trim() || '';
+      const message = document.getElementById('message')?.value?.trim() || '';
+
+      const subject = '【EBアカデミー】お問い合わせ';
+      const body =
+        `お名前: ${name}\n` +
+        `学校・チーム名: ${team}\n` +
+        `メール: ${email}\n\n` +
+        `お問い合わせ内容:\n${message}`;
+
+      const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // mailto起動（ブラウザによっては window.open のほうが起動率が高い）
+      try {
+        window.location.href = mailtoUrl;
+      } catch (err) {
+        window.open(mailtoUrl, '_self');
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
