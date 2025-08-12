@@ -21,7 +21,6 @@
         html {
             scroll-behavior: smooth;
         }
-        /* ▼ 背景画像をunnnamed.jpgに変更 ▼ */
         .hero-bg {
             background-image: url('./images/unnamed.jpg');
             background-size: cover;
@@ -47,7 +46,7 @@
                 <a href="#services" class="text-slate-600 hover:text-sky-600">サービス</a>
                 <a href="#contact" class="bg-sky-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-sky-700 transition-colors">お問い合わせ</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+            <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-label="メニューを開閉">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
@@ -137,22 +136,21 @@
         </section>
         
         <!-- プロフィールセクション -->
-    <section id="profile" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black mb-4">プロフィール</h2>
-            </div>
-            <div class="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg p-8 shadow-sm">
-                <div class="md:w-1/3 text-center mb-6 md:mb-0">
-                    <!-- ▼ 経歴写真.jpg に差し替え ▼ -->
-                    <img src="./images/pfp.jpg" 
-                         alt="庭田 芽青 プロフィール写真" 
-                         class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-lg"
-                         onerror="this.onerror=null;this.src='https://placehold.co/400x400/38bdf8/ffffff?text=Profile+Image';">
-                    <h3 class="text-2xl font-bold mt-4">庭田 芽青</h3>
-                    <p class="text-slate-600">にわた めいせい</p>
+        <section id="profile" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">プロフィール</h2>
                 </div>
-                <div class="md:w-2/3 md:pl-12">
+                <div class="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg p-8 shadow-sm">
+                    <div class="md:w-1/3 text-center mb-6 md:mb-0">
+                        <img src="./images/pfp.jpg" 
+                             alt="庭田 芽青 プロフィール写真" 
+                             class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-lg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/38bdf8/ffffff?text=Profile+Image';">
+                        <h3 class="text-2xl font-bold mt-4">庭田 芽青</h3>
+                        <p class="text-slate-600">にわた めいせい</p>
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
                         <div class="mb-6">
                             <h4 class="font-bold text-lg text-sky-800 border-b-2 border-sky-200 pb-2 mb-3">想い</h4>
                             <p class="text-slate-700">高校時代、自分の目標は選手としての活躍でした。しかし、チームのために何ができるかを追求した先に見つけたのが「メンタルチーフ」という役割です。補欠だったからこそ、レギュラーだけではない全員の頑張りの尊さ、そしてその力がチームを強くすることを誰よりも知っています。「庭田がいるから慶應は強い」と思ってもらえる存在を目指した経験を、今度は僕が未来の球児たちに伝えていきます。</p>
@@ -268,9 +266,7 @@
                 </div>
                 <div class="max-w-3xl mx-auto">
                     <div class="relative">
-                        <!-- The line -->
                         <div class="absolute left-5 top-5 h-full border-l-2 border-sky-300"></div>
-                        <!-- Steps -->
                         <div class="relative flex items-start mb-8">
                             <div class="bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10">1</div>
                             <div class="ml-6">
@@ -312,29 +308,55 @@
                     <p class="max-w-2xl mx-auto text-sky-200">ご相談、ご質問、講演依頼など、お気軽にご連絡ください。<br>チームの未来を、一緒に作りましょう。</p>
                 </div>
                 <div class="max-w-xl mx-auto bg-white text-slate-800 rounded-lg p-8 shadow-2xl">
-                    <form id="contact-form" action="#" method="get">
+
+                    <!-- ▼▼▼ Formspree版フォーム（ブラウザ完結） ▼▼▼ -->
+                    <form id="contact-form" action="https://formspree.io/f/mqalnbbb" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="【EBアカデミー】お問い合わせ">
+
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-bold mb-2">お名前</label>
-                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
                         </div>
+
                         <div class="mb-4">
                             <label for="team" class="block text-sm font-bold mb-2">学校・チーム名</label>
-                            <input type="text" id="team" name="team" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+                            <input type="text" id="team" name="team"
+                                   class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
                         </div>
+
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-bold mb-2">メールアドレス</label>
-                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                            <input type="email" id="email" name="_replyto" required
+                                   class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
                         </div>
+
                         <div class="mb-6">
                             <label for="message" class="block text-sm font-bold mb-2">お問い合わせ内容</label>
-                            <textarea id="message" name="body" rows="5" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required></textarea>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
                         </div>
+
+                        <!-- ハニーポット（スパム対策） -->
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+
                         <div class="text-center">
-                            <button type="button" id="send-mail" class="w-full bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition-colors text-lg">
-  メールで送信する
-</button>
+                            <button type="submit" id="send-btn"
+                                    class="w-full bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition-colors text-lg">
+                                送信する
+                            </button>
                         </div>
+
+                        <!-- 成否メッセージ -->
+                        <p id="form-success" class="hidden mt-4 text-green-600 text-center font-bold">
+                            送信しました。折り返しご連絡いたします。
+                        </p>
+                        <p id="form-error" class="hidden mt-4 text-red-600 text-center font-bold">
+                            送信に失敗しました。お手数ですが時間をおいて再度お試しください。
+                        </p>
                     </form>
+                    <!-- ▲▲▲ Formspree版フォームここまで ▲▲▲ -->
+
                     <div class="text-center mt-6">
                         <p class="text-slate-600">InstagramのDMからもお気軽にご連絡ください。</p>
                         <a href="https://www.instagram.com/n.meisay" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-sky-600 font-bold hover:underline">
@@ -360,45 +382,64 @@
     </footer>
 
     <script>
-  const sendBtn = document.getElementById('send-mail');
-if (sendBtn) {
-  sendBtn.addEventListener('click', function () {
-    const to = 'meisay89.124.may@gmail.com';
-    const name = document.getElementById('name')?.value?.trim() || '';
-    const team = document.getElementById('team')?.value?.trim() || '';
-    const email = document.getElementById('email')?.value?.trim() || '';
-    const message = document.getElementById('message')?.value?.trim() || '';
+        // モバイルメニューのトグル
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // メニュークリックで閉じる
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
 
-    const subject = '【EBアカデミー】お問い合わせ';
-    // 本文を短くする（URL長対策）
-    const bodyLines = [
-      `お名前: ${name}`,
-      `学校・チーム名: ${team}`,
-      `メール: ${email}`,
-      '',
-      'お問い合わせ内容:',
-      message.slice(0, 800) // ← 長文対策で上限を適度にカット
-    ];
-    const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+        // Formspreeへfetch送信（ページ遷移なし）
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-    // 見えない a タグを作ってクリック（相性◎）
-    const a = document.createElement('a');
-    a.href = mailtoUrl;
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  });
-}
-</script>
+                const sendBtn   = document.getElementById('send-btn');
+                const successEl = document.getElementById('form-success');
+                const errorEl   = document.getElementById('form-error');
+
+                successEl.classList.add('hidden');
+                errorEl.classList.add('hidden');
+                sendBtn.disabled = true;
+                sendBtn.textContent = '送信中...';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    if (!formData.get('_subject')) {
+                        formData.append('_subject', '【EBアカデミー】お問い合わせ');
+                    }
+
+                    const res = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (res.ok) {
+                        contactForm.reset();
+                        successEl.classList.remove('hidden');
+                    } else {
+                        // 可能なら詳細をログ
+                        const data = await res.json().catch(() => ({}));
+                        console.error('Formspree error:', data);
+                        errorEl.classList.remove('hidden');
+                    }
+                } catch (err) {
+                    console.error(err);
+                    errorEl.classList.remove('hidden');
+                } finally {
+                    sendBtn.disabled = false;
+                    sendBtn.textContent = '送信する';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
