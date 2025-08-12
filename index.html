@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBアカデミー | 甲子園優勝補欠が伝える全員主役のチーム作り</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Noto Sans JPを基本フォントに設定 */
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* 見出しなど力強い部分には特に太いウェイトを */
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 900; /* Black */
+        }
+        /* スムーズスクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* ヒーローセクションの背景画像 */
+        .hero-bg {
+            /* ユーザー指定のGoogle Driveリンクを背景画像として設定 */
+            background-image: url('https://drive.google.com/uc?export=download&id=13vf2Z9K1aEQXVaTFxVK_NUc_stJG04TL');
+            background-size: cover;
+            background-position: center;
+            /* 画像の読み込みに失敗した場合の背景色を指定します */
+            background-color: #0c4a6e; /* sky-900 */
+        }
+        /* グラデーションテキスト */
+        .gradient-text {
+            background: linear-gradient(to right, #0369a1, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- ヘッダー -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black text-sky-800">EBアカデミー</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-slate-600 hover:text-sky-600">3つの特徴</a>
+                <a href="#profile" class="text-slate-600 hover:text-sky-600">プロフィール</a>
+                <a href="#services" class="text-slate-600 hover:text-sky-600">サービス</a>
+                <a href="#contact" class="bg-sky-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-sky-700 transition-colors">お問い合わせ</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#features" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">3つの特徴</a>
+            <a href="#profile" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">プロフィール</a>
+            <a href="#services" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">サービス</a>
+            <a href="#contact" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">お問い合わせ</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero-bg text-white min-h-[60vh] md:min-h-[80vh] flex items-center">
+            <div class="bg-black/50 w-full h-full min-h-[60vh] md:min-h-[80vh] flex items-center">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
+                        甲子園優勝を「補欠」として経験した僕だから伝えられる<br class="hidden md:block">
+                        <span class="text-sky-300">全員主役</span>のチーム作り
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-200 mb-8">EBアカデミーは、選手の心を育て、チームを一つにするメンタルサポートを提供します。</p>
+                    <a href="#services" class="bg-white text-sky-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-slate-200 transition-colors">講演プランを見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 問題提起セクション -->
+        <section id="problems" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-black mb-4">チームのこんな<span class="gradient-text">悩み</span>ありませんか？</h2>
+                <p class="max-w-3xl mx-auto text-slate-600 mb-12">一つでも当てはまれば、EBアカデミーがお力になれるかもしれません。</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    <div class="bg-slate-100 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2 text-sky-800">選手について</h3>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1">
+                            <li>大事な試合で力を発揮できない</li>
+                            <li>努力の仕方がわからず悩んでいる</li>
+                            <li>レギュラーと補欠の間に溝がある</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2 text-sky-800">チームについて</h3>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1">
+                            <li>チームに一体感がない</li>
+                            <li>新チームの目標設定に悩んでいる</li>
+                            <li>応援されるチームになりたい</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2 text-sky-800">野球の価値について</h3>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1">
+                            <li>野球を通じて人間的に成長してほしい</li>
+                            <li>野球の本当の楽しさを知ってほしい</li>
+                            <li>野球って本当にいいスポーツなの？</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3つの特徴セクション -->
+        <section id="features" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">EBアカデミー <span class="gradient-text">3つの特徴</span></h2>
+                    <p class="max-w-3xl mx-auto text-slate-600">中高生球児向けに「100の実力を100以上に発揮する方法」と「野球を通じた人間的成長」をお伝えします。</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-5xl text-sky-600 mb-4">1</div>
+                        <h3 class="text-xl font-bold mb-2">補欠としての<span class="text-sky-600">実体験</span></h3>
+                        <p class="text-slate-600">甲子園優勝チームに「補欠」として貢献。レギュラーだけでなく、全ての選手の気持ちが分かるからこそ、心に響く言葉で「全員主役」のチーム作りをサポートします。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-5xl text-sky-600 mb-4">2</div>
+                        <h3 class="text-xl font-bold mb-2">選手に近い<span class="text-sky-600">現役大学生</span></h3>
+                        <p class="text-slate-600">年齢が近いからこそ、選手の目線に立った対話が可能です。指導者や親には言えない本音を引き出し、一人ひとりの心に寄り添いながら、チームの課題を解決に導きます。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-5xl text-sky-600 mb-4">3</div>
+                        <h3 class="text-xl font-bold mb-2">慶應で培った<span class="text-sky-600">人間教育</span></h3>
+                        <p class="text-slate-600">「野球人である前に、人としてどうあるべきか」。慶應義塾で学んだ人間教育の考え方をベースに、応援されるチーム、社会で通用する人間の育成を目指します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- プロフィールセクション -->
+        <section id="profile" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">プロフィール</h2>
+                </div>
+                <div class="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg p-8 shadow-sm">
+                    <div class="md:w-1/3 text-center mb-6 md:mb-0">
+                        <img src="https://drive.google.com/uc?export=download&id=1splrG9VR7BmR7ibjbWUS26hwdWf-9Uy7" 
+                             alt="庭田 芽青 プロフィール写真" 
+                             class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-lg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/38bdf8/ffffff?text=Profile+Image';">
+                        <h3 class="text-2xl font-bold mt-4">庭田 芽青</h3>
+                        <p class="text-slate-600">にわた めいせい</p>
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-sky-800 border-b-2 border-sky-200 pb-2 mb-3">想い</h4>
+                            <p class="text-slate-700">高校時代、自分の目標は選手としての活躍でした。しかし、チームのために何ができるかを追求した先に見つけたのが「メンタルチーフ」という役割です。補欠だったからこそ、レギュラーだけではない全員の頑張りの尊さ、そしてその力がチームを強くすることを誰よりも知っています。「庭田がいるから慶應は強い」と思ってもらえる存在を目指した経験を、今度は僕が未来の球児たちに伝えていきます。</p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg text-sky-800 border-b-2 border-sky-200 pb-2 mb-3">主な経歴</h4>
+                            <ul class="space-y-2 text-slate-700">
+                                <li><strong>中学：</strong>柏市立富勢中学校野球部（柏選抜 主将）</li>
+                                <li><strong>高校：</strong>慶應義塾高等学校（一般入試）
+                                    <ul class="list-disc list-inside ml-4 mt-1 text-sm">
+                                        <li>1年秋よりメンタルチーフを務める</li>
+                                        <li>3年夏、第105回全国高等学校野球選手権記念大会 優勝（補欠として帯同）</li>
+                                        <li>鹿児島国体 ベンチ入り（背番号17）</li>
+                                    </ul>
+                                </li>
+                                <li><strong>大学：</strong>慶應義塾大学 法学部政治学科 2年在学中</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg text-sky-800 border-b-2 border-sky-200 pb-2 mb-3">指導理念</h4>
+                             <p class="text-2xl font-black text-slate-700">「やるからには全力で」<br>最大限のサポートをお約束します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービス内容・料金セクション -->
+        <section id="services" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">サービス・料金</h2>
+                    <p class="max-w-3xl mx-auto text-slate-600">チームの課題やご要望に合わせて、最適なプランをご提案します。</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                    <!-- 無料プラン -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-slate-200 flex flex-col">
+                        <h3 class="text-2xl font-black text-center mb-1 text-sky-800">無料講演プラン</h3>
+                        <p class="text-center text-slate-500 mb-6">まずはお気軽にご相談ください</p>
+                        <div class="mb-6 flex-grow">
+                            <p class="mb-4">以下のテーマから1つお選びいただけます。（所要時間：約60分）</p>
+                            <div class="space-y-3">
+                                <div class="bg-slate-100 p-4 rounded-md">
+                                    <h4 class="font-bold">「慶應メンタル」</h4>
+                                    <p class="text-sm text-slate-600">〜100の実力を100以上に発揮する方法〜</p>
+                                </div>
+                                <div class="bg-slate-100 p-4 rounded-md">
+                                    <h4 class="font-bold">「野球をすることの価値」</h4>
+                                    <p class="text-sm text-slate-600">〜野球を通じて人間的に成長できるか〜</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-black mb-2">無料</p>
+                            <p class="text-sm text-slate-600 mb-6">※タクシー代を含む交通費実費のみご負担をお願いしております。</p>
+                            <a href="#contact" class="w-full block bg-slate-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-slate-600 transition-colors">このプランについて相談する</a>
+                        </div>
+                    </div>
+                    <!-- 有料プラン -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-sky-500 flex flex-col relative">
+                        <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-sm font-bold px-4 py-1 rounded-full">おすすめ</div>
+                        <h3 class="text-2xl font-black text-center mb-1 text-sky-800">チーム変革サポートプラン</h3>
+                        <p class="text-center text-slate-500 mb-6">本気で変わりたいチームのための特別プラン</p>
+                        <div class="mb-6 flex-grow">
+                             <p class="mb-4">講義とワークを組み合わせ、チームの成長を加速させます。</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>講義「努力とは何か」(~40分)</li>
+                                <li>貴チームの課題に合わせた個別カスタマイズ講演 (~15分)</li>
+                                <li>Vision Setワークショップ (~30分)</li>
+                                <li>目標達成ロードマップ設計ワークショップ (~30分)</li>
+                                <li class="font-bold text-sky-600">【特典】講演後14日間の徹底LINEサポート付き（技術指導も可）</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-black mb-2">7,700<span class="text-lg">円</span><span class="text-lg font-normal">（税込）</span></p>
+                            <p class="text-sm text-slate-600 mb-6">※交通費別途。参加人数等により変動する場合があります。まずはお見積りを。</p>
+                            <a href="#contact" class="w-full block bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition-colors">このプランについて相談する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お客様の声セクション -->
+        <section id="testimonials" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">お客様の声</h2>
+                    <p class="max-w-3xl mx-auto text-slate-600">指導実績：千葉、東京を中心に多数のチームをサポート</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-slate-700 mb-4">"実力よりも人間性やチームへの関わり方が大事で、全員が一体となって目標に向かうことの大切さを学びました。"</p>
+                        <p class="font-bold text-right">- 中学3年生</p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-slate-700 mb-4">"選手目線の言葉が、生徒にも親にも響きます。仮に指導者が同じ話をしても、ここまで沁みないかもしれません。"</p>
+                        <p class="font-bold text-right">- 保護者様</p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-slate-700 mb-4">"「応援されるチームづくり」「野球人である前に人として」という言葉が、教員としてとても印象に残りました。"</p>
+                        <p class="font-bold text-right">- 学校教員様</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ご契約までの流れ -->
+        <section id="flow" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">ご契約までの流れ</h2>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative">
+                        <!-- The line -->
+                        <div class="absolute left-5 top-5 h-full border-l-2 border-sky-300"></div>
+                        <!-- Steps -->
+                        <div class="relative flex items-start mb-8">
+                            <div class="bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10">1</div>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-lg">お問い合わせ</h3>
+                                <p class="text-slate-600">本ページ下部のフォームまたはメールにて、お気軽にご連絡ください。</p>
+                            </div>
+                        </div>
+                        <div class="relative flex items-start mb-8">
+                            <div class="bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10">2</div>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-lg">オンラインヒアリング（無料）</h3>
+                                <p class="text-slate-600">Zoomにて30分ほど、チームの現状や課題、ご希望をお伺いします。</p>
+                            </div>
+                        </div>
+                        <div class="relative flex items-start mb-8">
+                            <div class="bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10">3</div>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-lg">ご提案・お見積り</h3>
+                                <p class="text-slate-600">ヒアリング内容に基づき、最適なプランとお見積りをご提案します。</p>
+                            </div>
+                        </div>
+                        <div class="relative flex items-start">
+                            <div class="bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10">4</div>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-lg">ご契約・日程調整</h3>
+                                <p class="text-slate-600">内容にご納得いただけましたら契約完了です。実施日程を調整します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section id="contact" class="py-16 md:py-24 bg-sky-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">お問い合わせ</h2>
+                    <p class="max-w-2xl mx-auto text-sky-200">ご相談、ご質問、講演依頼など、お気軽にご連絡ください。<br>チームの未来を、一緒に作りましょう。</p>
+                </div>
+                <div class="max-w-xl mx-auto bg-white text-slate-800 rounded-lg p-8 shadow-2xl">
+                    <form action="mailto:meisay89.124.may@gmail.com" method="get" enctype="text/plain">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-bold mb-2">お名前</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="team" class="block text-sm font-bold mb-2">学校・チーム名</label>
+                            <input type="text" id="team" name="team" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-bold mb-2">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-bold mb-2">お問い合わせ内容</label>
+                            <textarea id="message" name="body" rows="5" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition-colors text-lg">メールで送信する</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-6">
+                        <p class="text-slate-600">InstagramのDMからもお気軽にご連絡ください。</p>
+                        <a href="https://www.instagram.com/n.meisay" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-sky-600 font-bold hover:underline">
+                            @n.meisay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white mb-2">EBアカデミー</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#profile" class="hover:text-white">プロフィール</a>
+                <a href="#services" class="hover:text-white">サービス</a>
+                <a href="#contact" class="hover:text-white">お問い合わせ</a>
+            </div>
+            <p class="text-sm">&copy; 2024 EB Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニューのトグル
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // メニュークリックでメニューを閉じる
+        const menuLinks = document.querySelectorAll('#mobile-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
