@@ -360,34 +360,40 @@
     </footer>
 
     <script>
-  // （モバイルメニューのコードはそのまま）
-
-  // ▼ お問い合わせ：ボタンクリックで mailto 起動（フォーム送信はしない）
   const sendBtn = document.getElementById('send-mail');
-  if (sendBtn) {
-    sendBtn.addEventListener('click', function () {
-      const to = 'meisay89.124.may@gmail.com';
-      const name = document.getElementById('name')?.value?.trim() || '';
-      const team = document.getElementById('team')?.value?.trim() || '';
-      const email = document.getElementById('email')?.value?.trim() || '';
-      const message = document.getElementById('message')?.value?.trim() || '';
+if (sendBtn) {
+  sendBtn.addEventListener('click', function () {
+    const to = 'meisay89.124.may@gmail.com';
+    const name = document.getElementById('name')?.value?.trim() || '';
+    const team = document.getElementById('team')?.value?.trim() || '';
+    const email = document.getElementById('email')?.value?.trim() || '';
+    const message = document.getElementById('message')?.value?.trim() || '';
 
-      const subject = '【EBアカデミー】お問い合わせ';
-      const body =
-        `お名前: ${name}\n` +
-        `学校・チーム名: ${team}\n` +
-        `メール: ${email}\n\n` +
-        `お問い合わせ内容:\n${message}`;
+    const subject = '【EBアカデミー】お問い合わせ';
+    // 本文を短くする（URL長対策）
+    const bodyLines = [
+      `お名前: ${name}`,
+      `学校・チーム名: ${team}`,
+      `メール: ${email}`,
+      '',
+      'お問い合わせ内容:',
+      message.slice(0, 800) // ← 長文対策で上限を適度にカット
+    ];
+    const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
 
-      const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      // mailクライアントを起動（フォーム送信はしていないので警告は出ません）
-      window.location.href = mailtoUrl;
-    });
-  }
+    // 見えない a タグを作ってクリック（相性◎）
+    const a = document.createElement('a');
+    a.href = mailtoUrl;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+}
 </script>
 </body>
 </html>
+
 
 
 
