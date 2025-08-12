@@ -1,1 +1,1 @@
-# eb-acadmy
+# eb-academy
